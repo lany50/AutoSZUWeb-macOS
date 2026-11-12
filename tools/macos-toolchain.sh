@@ -1,8 +1,9 @@
 #!/bin/bash
 # Shared by the local build and regression entry points.
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-CXX=/Library/Developer/CommandLineTools/usr/bin/clang++
-SDK=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk
+export DEVELOPER_DIR=/Library/Developer/CommandLineTools
+CXX="$DEVELOPER_DIR/usr/bin/clang++"
+SDK="$DEVELOPER_DIR/SDKs/MacOSX.sdk"
 FW_SRC="$ROOT/deps/runtime-macos-arm64"
 python3 "$ROOT/tools/verify_dependencies.py"
 COMMON=(-std=c++17 -arch arm64 -mmacosx-version-min=14.0 -isysroot "$SDK"
