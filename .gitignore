@@ -1,0 +1,25 @@
+# Local backups and generated output
+/backups/
+/build/
+**/build/
+**/dist/
+*.dSYM/
+*.o
+.DS_Store
+__pycache__/
+
+# Personal runtime data and secrets
+.env
+.env.*
+credential.key
+setting.json
+events.json
+userdata.txt
+*.log
+*.p12
+*.pfx
+
+# Local notes and superseded patches
+/排障记录_*.md
+/新版使用说明_*.md
+/patches/

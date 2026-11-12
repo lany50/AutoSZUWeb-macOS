@@ -1,0 +1,122 @@
+[
+  {
+    "file": "curl-8.21.0.txt",
+    "source": "https://raw.githubusercontent.com/curl/curl/curl-8_21_0/COPYING",
+    "bytes": 1088,
+    "sha256": "82f2f4427d6545ee5aaac4f0b80428da6cc8ba41c2cf5da3a03680ec327b9681"
+  },
+  {
+    "file": "curl-8.7.1.txt",
+    "source": "https://raw.githubusercontent.com/curl/curl/curl-8_7_1/COPYING",
+    "bytes": 1088,
+    "sha256": "adb1fc06547fd136244179809f7b7c2d2ae6c4534f160aa513af9b6a12866a32"
+  },
+  {
+    "file": "curl-8.20.0.txt",
+    "source": "https://raw.githubusercontent.com/curl/curl/curl-8_20_0/COPYING",
+    "bytes": 1088,
+    "sha256": "82f2f4427d6545ee5aaac4f0b80428da6cc8ba41c2cf5da3a03680ec327b9681"
+  },
+  {
+    "file": "openssl-3.6.3.txt",
+    "source": "https://raw.githubusercontent.com/openssl/openssl/openssl-3.6.3/LICENSE.txt",
+    "bytes": 10175,
+    "sha256": "7d5450cb2d142651b8afa315b5f238efc805dad827d91ba367d8516bc9d49e7a"
+  },
+  {
+    "file": "openssl-3.5.4.txt",
+    "source": "https://raw.githubusercontent.com/openssl/openssl/openssl-3.5.4/LICENSE.txt",
+    "bytes": 10175,
+    "sha256": "7d5450cb2d142651b8afa315b5f238efc805dad827d91ba367d8516bc9d49e7a"
+  },
+  {
+    "file": "brotli-1.2.0.txt",
+    "source": "https://raw.githubusercontent.com/google/brotli/v1.2.0/LICENSE",
+    "bytes": 1084,
+    "sha256": "3d180008e36922a4e8daec11c34c7af264fed5962d07924aea928c38e8663c94"
+  },
+  {
+    "file": "nghttp2-1.70.0.txt",
+    "source": "https://raw.githubusercontent.com/nghttp2/nghttp2/v1.70.0/COPYING",
+    "bytes": 1156,
+    "sha256": "6b94f3abc1aabd0c72a7c7d92a77f79dda7c8a0cb3df839a97890b4116a2de2a"
+  },
+  {
+    "file": "nghttp2-1.69.0.txt",
+    "source": "https://raw.githubusercontent.com/nghttp2/nghttp2/v1.69.0/COPYING",
+    "bytes": 1156,
+    "sha256": "6b94f3abc1aabd0c72a7c7d92a77f79dda7c8a0cb3df839a97890b4116a2de2a"
+  },
+  {
+    "file": "nghttp3-1.18.0.txt",
+    "source": "https://raw.githubusercontent.com/ngtcp2/nghttp3/v1.18.0/COPYING",
+    "bytes": 1081,
+    "sha256": "58cc3fc8c6d6cb2485ab35eb5918e849b5bf1e56522974e106d7a39a88d61dcd"
+  },
+  {
+    "file": "nghttp3-1.15.0.txt",
+    "source": "https://raw.githubusercontent.com/ngtcp2/nghttp3/v1.15.0/COPYING",
+    "bytes": 1081,
+    "sha256": "58cc3fc8c6d6cb2485ab35eb5918e849b5bf1e56522974e106d7a39a88d61dcd"
+  },
+  {
+    "file": "ngtcp2-1.25.0.txt",
+    "source": "https://raw.githubusercontent.com/ngtcp2/ngtcp2/v1.25.0/COPYING",
+    "bytes": 1080,
+    "sha256": "542dd526d2ea23565f0571cc68df6f05ed11248a90ff0f32de19d8ba589db513"
+  },
+  {
+    "file": "ngtcp2-1.22.1.txt",
+    "source": "https://raw.githubusercontent.com/ngtcp2/ngtcp2/v1.22.1/COPYING",
+    "bytes": 1080,
+    "sha256": "542dd526d2ea23565f0571cc68df6f05ed11248a90ff0f32de19d8ba589db513"
+  },
+  {
+    "file": "libpsl.txt",
+    "source": "https://raw.githubusercontent.com/rockdaboot/libpsl/0.23.3/COPYING",
+    "bytes": 7,
+    "sha256": "c693279643b8cd5d248172d9c22cb7cf4ed163a3c98c8a3f69c2717edd3eacb7"
+  },
+  {
+    "file": "libssh2-1.11.1.txt",
+    "source": "https://raw.githubusercontent.com/libssh2/libssh2/libssh2-1.11.1/COPYING",
+    "bytes": 1959,
+    "sha256": "f7f9633cf9ff2f1333f3d7ce46973a8716a4d2a2815ad56f30d437d5fea7bafe"
+  },
+  {
+    "file": "zstd-1.5.7.txt",
+    "source": "https://raw.githubusercontent.com/facebook/zstd/v1.5.7/LICENSE",
+    "bytes": 1549,
+    "sha256": "7055266497633c9025b777c78eb7235af13922117480ed5c674677adc381c9d8"
+  },
+  {
+    "file": "nlohmann-json-3.12.0.txt",
+    "source": "https://raw.githubusercontent.com/nlohmann/json/v3.12.0/LICENSE.MIT",
+    "bytes": 1076,
+    "sha256": "46a65cffd1ea955132d95a8dd921640714a8d6b537d2e4e482d31145ae95b603"
+  },
+  {
+    "file": "libressl-4.3.1.txt",
+    "source": "https://raw.githubusercontent.com/libressl/portable/v4.3.1/COPYING",
+    "bytes": 6492,
+    "sha256": "9853507b8821c3f277aa60bf554eade41441ef06b2df538d247183ad28789b7f"
+  },
+  {
+    "file": "public-suffix-list.txt",
+    "source": "https://raw.githubusercontent.com/publicsuffix/list/master/LICENSE",
+    "bytes": 16727,
+    "sha256": "66a3107d5ad6a058aab753eaac2047ccb2ed0e39465dd0fe5844da3e300d5172"
+  },
+  {
+    "file": "zlib-ng.txt",
+    "source": "https://raw.githubusercontent.com/zlib-ng/zlib-ng/2.3.3/LICENSE.md",
+    "bytes": 867,
+    "sha256": "6c9f0d975b41afaa34d22f55bb8986ce69e5cb7ad327cb2b28820cd425edf5ee"
+  },
+  {
+    "file": "libpsl-0.21.5.txt",
+    "source": "https://raw.githubusercontent.com/rockdaboot/libpsl/0.21.5/COPYING",
+    "bytes": 1060,
+    "sha256": "322392e6001b2b3b0fca705dc9f11f26e12441188ecde50eb1d22909980b2925"
+  }
+]

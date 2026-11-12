@@ -1,0 +1,41 @@
+#!/bin/bash
+# Isolated regression tests use synthetic credentials and local HTTP fixtures.
+set -euo pipefail
+ROOT="$(cd "$(dirname "$0")" && pwd)"
+source "$ROOT/tools/macos-toolchain.sh"
+COMMON+=(-O1 -g)
+SRC="$ROOT/src-tree/src"
+TEST="$ROOT/src-tree/tests"
+OUT="$ROOT/build/tests"
+mkdir -p "$OUT"
+NETWORK=("$SRC/status.cpp" "$SRC/wake_signal.cpp" "$SRC/posix/network.cpp" "$SRC/network_observation.cpp" "$SRC/macos/environment.cpp")
+FRAMEWORKS=(-framework SystemConfiguration -framework Foundation)
+SECURITY=("$SRC/cli.cpp" "$SRC/json_store.cpp" "$SRC/user_data.cpp" "$SRC/uninstall.cpp" "$SRC/sys.cpp" "$SRC/platform_support.cpp" "$SRC/internal/credential_crypto.cpp" "$SRC/macos/sys.cpp" "$SRC/macos/file_path.cpp" "$SRC/macos/ui.mm" "$SRC/posix/single_instance.cpp")
+"$CXX" "${COMMON[@]}" "$TEST/feature_regression.cpp" "$SRC/cli.cpp" "${NETWORK[@]}" "$CURL_LIB" "${FRAMEWORKS[@]}" -o "$OUT/features"
+"$OUT/features"
+"$CXX" "${COMMON[@]}" "$TEST/auth_guard.cpp" "$SRC/web.cpp" "$SRC/status.cpp" "$SRC/wake_signal.cpp" "$CURL_LIB" -o "$OUT/auth_guard"
+"$OUT/auth_guard"
+"$CXX" "${COMMON[@]}" -DAUTOSZUWEB_AUTH_TESTING "$TEST/srun_cancellation.cpp" "$SRC/srun.cpp" "$CRYPTO_LIB" "$CURL_LIB" -o "$OUT/srun_cancellation"
+"$OUT/srun_cancellation"
+"$CXX" "${COMMON[@]}" "$TEST/diagnostic_regression.cpp" "${NETWORK[@]}" "$CURL_LIB" "${FRAMEWORKS[@]}" -o "$OUT/diagnostic_regression"
+"$OUT/diagnostic_regression"
+"$CXX" "${COMMON[@]}" -DAUTOSZUWEB_NETWORK_TESTING "$TEST/network_optimization.cpp" "${NETWORK[@]}" "$CURL_LIB" "${FRAMEWORKS[@]}" -o "$OUT/network_optimization"
+"$OUT/network_optimization"
+"$CXX" "${COMMON[@]}" "$TEST/monitor_integration.cpp" "$SRC/status.cpp" "$SRC/wake_signal.cpp" "$SRC/posix/single_instance.cpp" -o "$OUT/monitor_integration"
+"$OUT/monitor_integration"
+"$CXX" "${COMMON[@]}" "$TEST/settings_history_power.cpp" "$SRC/settings.cpp" "$SRC/config.cpp" "$SRC/json_store.cpp" "$SRC/event_history.cpp" "$SRC/wake_signal.cpp" "$SRC/internal/credential_crypto.cpp" "$CRYPTO_LIB" -o "$OUT/settings_history_power"
+"$OUT/settings_history_power" "$ROOT/build/ui-fixture"
+"$CXX" "${COMMON[@]}" "$TEST/security_regression.cpp" "${SECURITY[@]}" "$CRYPTO_LIB" -framework Cocoa -framework Security -framework Foundation -o "$OUT/security_regression"
+"$OUT/security_regression"
+"$CXX" "${COMMON[@]}" "$TEST/uninstall_lifecycle.cpp" "$SRC/uninstall.cpp" "$SRC/user_data.cpp" "$SRC/posix/single_instance.cpp" -o "$OUT/uninstall_lifecycle"
+"$OUT/uninstall_lifecycle"
+"$CXX" "${COMMON[@]}" "$TEST/test_main.cpp" "${SECURITY[@]}" "$SRC/config.cpp" "$SRC/runtime.cpp" "${NETWORK[@]}" "$CRYPTO_LIB" "$CURL_LIB" -framework Cocoa -framework Security "${FRAMEWORKS[@]}" -o "$OUT/AutoSZUWebTests"
+"$OUT/AutoSZUWebTests"
+"$CXX" "${COMMON[@]}" "$TEST/native_events.mm" "$SRC/macos/network_events.mm" "$SRC/wake_signal.cpp" -framework Cocoa -framework SystemConfiguration -o "$OUT/native_events"
+"$OUT/native_events"
+"$CXX" "${COMMON[@]}" "$TEST/ui_regression.mm" "$SRC/macos/app_windows.mm" "$SRC/macos/statusbar.mm" "$SRC/settings.cpp" "$SRC/config.cpp" "$SRC/json_store.cpp" "$SRC/event_history.cpp" "$SRC/wake_signal.cpp" "$SRC/status.cpp" -framework Cocoa -framework Foundation -o "$OUT/ui_regression"
+"$OUT/ui_regression"
+"$CXX" "${COMMON[@]}" "$TEST/notification_regression.mm" -framework Foundation -framework UserNotifications -o "$OUT/notification_regression"
+"$OUT/notification_regression"
+"$CXX" "${COMMON[@]}" "$TEST/mac_ui_test.mm" "$SRC/macos/ui.mm" -framework Cocoa -o "$OUT/mac_ui_test"
+"$OUT/mac_ui_test"

@@ -1,0 +1,7 @@
+.vscode
+*.o
+*.exe
+.claude/
+build/
+dist/
+test-backup/
